@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+#div1, #div2 {
+  float: left;
+  width: 1000px;
+  height: 350px;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid black;
+}
+body {
+ #
+
+
+
+
+
+
+
+
+
+
+
+ background-image: url('https://images.nintendolife.com/10823fc73257b/splatoon-2.original.jpg');
+ background-repeat: no-repeat;
+ background-attachment: fixed;
+ background-size: cover;
+}
+</style>
+</style>
+<script>
+function allowDrop(ev) {
+  ev.preventDefault();
+}
+
+function drag(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  ev.target.appendChild(document.getElementById(data));
+}
+</script>
+</head>
+<body>
+
+<h2>Dead man</h2>
+<font color=""> <p>Drag him into the prision you would like him in</p></font>
+
+<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Stick_Figure.svg/1200px-Stick_Figure.svg.png" draggable="true" ondragstart="drag(event)" id="drag1" width="880" height="310">
+</div>
+
+<div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+</body>
+</html>

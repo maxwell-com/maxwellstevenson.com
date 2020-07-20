@@ -1,0 +1,226 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">	<head>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+
+<meta name="description" content="Use this calculator to simplify fractions to mixed numbers and improper fraction format."/>
+<meta name="keywords" content="Calculator,online fraction calculator,proper fraction,improper fraction,mixed number,reducing,simplifying,reduce fractions,reduce a fraction,simplify a fraction"/>
+<meta http-equiv="PICS-Label" content='(PICS-1.1 "http://www.classify.org/safesurf/" L gen true for "http://www.alcula.com" r (SS~~000 1))'/>
+<link rel="meta" href="http://www.alcula.com/labels.rdf" type="application/rdf+xml" title="ICRA labels" />
+<meta http-equiv="pics-Label" content='(pics-1.1 "http://www.icra.org/pics/vocabularyv03/" l gen true for "http://alcula.com" r (n 0 s 0 v 0 l 0 oa 0 ob 0 oc 0 od 0 oe 0 of 0 og 0 oh 0 c 0)  gen true for "http://www.alcula.com" r (n 0 s 0 v 0 l 0 oa 0 ob 0 oc 0 od 0 oe 0 of 0 og 0 oh 0 c 0))' />
+<meta name="robots" content="index,follow"/>
+<link rel="stylesheet" href="/styles/alcula_v2.css" type="text/css" />
+<link rel="stylesheet" href="/styles/single_col.css" type="text/css" /><link rel="stylesheet" href="/styles/nav_style.css" type="text/css" />
+
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	$("#nav li ul").hide();
+	$("#nav li ul").hover(
+		function() {
+		},
+		function() {
+			$(this).fadeOut('slow');
+		}
+	);
+	$("#nav li").click(
+		function() {
+		$("#nav li").children("ul").fadeOut('slow');
+		$(this).children("ul").show();
+
+		}
+	);
+});
+</script>
+
+	<style type="text/css">
+.inpform {
+		font-size:24px;
+		font-weight:bold;
+		}
+.calculatorresult {
+		font-size:24px;
+		font-weight:bold;
+		border: 1px solid blue;
+		background-color: #F0F0F0;
+		width: 600px;
+		padding:1ex 1em 1ex 1em;
+		}
+.fractionpar {
+		text-align: center;
+		}
+.fractionop {
+		border-width: 0;
+		padding: 0 0 0 0;
+		margin: 0 0 0 0;
+		/*background: gray;*/
+		line-height: 50%;
+		vertical-align: middle;
+		}
+#extranotes {
+	min-width:750px;max-width: 800px; margin-left:0;margin-right:0;text-align:left;
+</style>
+
+	<script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+<script>
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+</script>
+
+<script>
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/38729963/Alcula_top_banner', [728, 90], 'div-gpt-ad-1475855529936-0').setTargeting('pn', ['fr_simplify']).addService(googletag.pubads());
+
+	googletag.pubads().collapseEmptyDivs();
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+</script><script>
+    function please_wait() {
+        $('#statcalculatorresult').remove();
+        $('<center><div id="statcalculatorresult" class="calculatorresult" style="text-align:left;"></div></center>').insertBefore('#conversion_calculator');
+        outputresult='<p style="color:blue; font-weight:bold; text-align:center">Please wait ...</p>';
+        $('div#statcalculatorresult').html(outputresult);
+    }
+
+
+   function loadSessionData() {
+        please_wait();
+        $.post(self.url,{ func: 'get_data' }, function(data) {
+        submitDataHandler(data);
+        } );
+   }
+
+   function updateErrorDiv(error_string) {
+        // Remove previous result window if there is one
+        $('#statcalculatorresult').remove();
+        // Insert the div for the result
+        $('<center><div id="statcalculatorresult" class="calculatorresult" style="text-align:left;"></div></center>').insertBefore('#conversion_calculator');
+        outputresult='<p style="color:red; font-weight:bold; text-align:center;">'+error_string+'</p>';
+        $('div#statcalculatorresult').html(outputresult);
+    }
+
+   function updateResultDiv(num_in,denom_in,negative,num_out,denom_out,gcd) {
+
+        // Remove previous result window if there is one
+        $('#statcalculatorresult').remove();
+
+        // Insert the div for the result
+        $('<center><div id="statcalculatorresult" class="calculatorresult" style="text-align:left;"></div></center>').insertBefore('#conversion_calculator');
+        outputresult='Greatest Common Divisor='+gcd+'<br /><br /><table class="calculatorresulttab"><tr class="fractionpar"><td nowrap>'+num_in+'</td>'+(gcd!=1 && num_out!=0?'<td></td><td nowrap>'+num_in+'/'+gcd+'</td>':'')+'<td>'+(negative?'<td></td>':'')+'</td>'+(denom_out!=1?'<td nowrap>'+num_out+'</td>':'<td nowrap rowspan=3 style="vertical-align: middle;">'+num_out+'</td>')+'</tr>'+
+
+'<tr class="fractionop"><td class="fractionoutputline"><img  class="fractionoutputline" src="/images/BlackDot.gif" height="3" width="100%" /></td>'+(gcd!=1 && num_out!= 0?'<td class="fractionoutput"><img src="/images/Dot.png" height="1" width="10px"><img class="fractionoutputline" src="/images/op-equal.gif" /><img src="/images/Dot.png" height="1" width="10px"></td><td class="fractionoutputline"><img  class="fractionoutputline" src="/images/BlackDot.gif" height="3" width="100%" /></td>':'')+'<td class="fractionoutput"><img src="/images/Dot.png" height="1" width="10px"><img class="fractionoutputline" src="/images/op-equal.gif" /><img src="/images/Dot.png" height="1" width="10px"></td>'+(negative?'<td><img style="padding-right:10px;" src="/images/BlackDot.gif" height="3" width="15px"></img></td>':'')+(denom_out!=1?'<td class="fractionoutputline"><img  class="fractionoutputline" src="/images/BlackDot.gif" height="3" width="100%" /></td>':'')+'</tr>'+
+
+'<tr class="fractionpar"><td nowrap>'+denom_in+'</td>'+(gcd!=1 && num_out!=0?'<td></td><td nowrap>'+denom_in+'/'+gcd+'</td>':'')+'<td></td>'+(negative?'<td></td>':'')+''+(denom_out!=1?'<td nowrap>'+denom_out+'</td>':'')+'</tr>'+
+'</table>'+(gcd==1?'<p style="color:red; font-size:12px; font-weight:bold; text-align:center">(This fraction cannot be reduced any further)</p>':'<br />');
+
+        $('div#statcalculatorresult').html(outputresult);
+    }
+
+
+
+
+
+
+   function submitDataHandler(data) {
+//alert("Hello from submitDataHandler");
+       var num_in;var denom_in;var negative;var num_out;var denom_out;var gcd;
+       // First check for errors
+       errorstring='';
+       $(data).find('errorstring').each( function() {
+                 errorstring=$(this).text();
+//alert(errorstring);
+       } );
+
+       if (errorstring=="") {
+
+          $(data).find('numin').each( function() { num_in=$(this).text(); $('#num_in').val(num_in); });$(data).find('denin').each( function() { denom_in=$(this).text(); $('#denom_in').val(denom_in); });$(data).find('neg').each( function() { negative=$(this).text(); });$(data).find('numout').each( function() { num_out=$(this).text(); });$(data).find('denout').each( function() { denom_out=$(this).text(); });$(data).find('gcd').each( function() { gcd=$(this).text(); });
+          updateResultDiv(num_in,denom_in,negative,num_out,denom_out,gcd);
+       } else if (errorstring != "NODATA") {
+           updateErrorDiv(errorstring);
+       } else {
+           // Remove previous result window if there is one
+           $('#statcalculatorresult').remove();
+      }
+
+
+
+   }
+
+
+</script>
+
+
+	</head>		<body >
+	<div id="header" style="white-space:nowrap; height:60px; min-width:915px; background-image:url(/images/newHeaderBackground.png)"><nowrap>	<div id="nav">
+                <!--<div style="display:inline;float:left; margin-top:40px;">-->
+		<ul style="display:inline;float:left;margin-top:40px;">
+
+
+
+		</ul>
+                <!--</div>-->
+	</div><!--nav-->
+</nowrap></div><!--header-->
+
+
+
+<div id="middle">
+<h1 class="pagetitletext"></h1>
+<center><p class="calcdescription"><b></b></p></center>
+<center><!-- /38729963/Alcula_top_banner -->
+<div id='div-gpt-ad-1475855529936-0' style='height:90px; width:728px;'>
+<script>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1475855529936-0'); });
+</script>
+</div></center><br /><br />
+<div class="quickcalculator">
+   <div id="conversion_calculator" style="text-align:left;">
+   <br />
+
+   <form id="dataform" class="conversion_calculator" name="calc_form" method="post">
+    <input type="hidden" name="func" value="submit_data" />
+    <center>
+       <table>
+       <tr>
+       <th align="right"><label for="">Numerator: </label></th><td><input style="text-align:center;" type="text" name="num_in" id="num_in" size="10" class="inpform" /></td>
+       </tr>
+       <tr><td></td><td style="height:4px; background:black;width: 1em;"></td></tr>
+       <tr>
+       <th align="right"><label for="">Denominator: </label></th><td><input style="text-align:center;" type="text" name="denom_in" id="denom_in" size="10" class="inpform" /></td>
+       </tr>
+       <tr><td colspan="2" style="text-align:center;"><input style="width:100%;" type="submit" name="mysubmit" class="inpform submitbutton" value="Simplify Fraction" /></td></tr>
+       </table>
+    </center>
+</form>
+        <script type="text/javascript">
+
+        $('#dataform').submit(function(event) {
+                event.preventDefault();
+                var $this=$(this);
+                errorstring="";re_num_in=new RegExp(/^[+-]?[0-9][0-9]*$/);
+if (errorstring=="" && re_num_in.test($('#num_in').val())) {} else {errorstring="Numerator must be an integer number"}
+re_denom_in=new RegExp(/^[+-]?[0-9][0-9]*$/);
+if (errorstring=="" && re_denom_in.test($('#denom_in').val())) {} else {errorstring="Denominator must be an integer number"}
+$('#num_in').val($('#num_in').val().replace(/^([^0-9]*)[0]*([0-9][0-9]*)$/,'$1$2'));
+$('#denom_in').val($('#denom_in').val().replace(/^([^0-9]*)[0]*([0-9][0-9]*)$/,'$1$2'));
+                   if (errorstring=="") {
+                      var dataToSend=$this.serialize();
+                      please_wait();
+
+                      // Add callback function later
+                      $.post(self.url,dataToSend,submitDataHandler);
+                   } else {
+                      updateErrorDiv(errorstring);
+                   }
+                });
+
+        </script>
+
+
+
+   </div> <!-- conversion_calculator -->
+</div> <!-- quickcalculator -->
+<center>
+<div id="extranotes">

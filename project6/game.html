@@ -1,0 +1,55 @@
+
+
+<html>
+<body>
+<style>
+p {outline-color:red
+
+  ;}
+
+
+p.double {outline-style: double;}
+
+</style>
+<h1> move the car! <hl>
+<table style="width:100%">
+
+<script language="JavaScript">
+    function function1(){
+        document.all.myMarquee.direction = "up";
+    }
+    function function2(){
+        document.all.myMarquee.direction = "left";
+    }
+    function function3(){
+        document.all.myMarquee.direction = "right";
+    }
+    function function4(){
+        document.all.myMarquee.direction = "down";
+    }
+</script>
+
+<p class="double"><marquee id="myMarquee"><img id="myImage" src="https://lh3.googleusercontent.com/proxy/8Uw79pNHkAsdUSON7ox3jTkhEIaWj1iaOYNH4biDnlscWjWOLWEKMOHTGDxOoM2_k5kPilB3t8mYyzsA1A7jCMdbSjzw5f4" width="100" height="180"> </marquee>
+
+<tr>
+<td><button onclick="function1();">Up</button><td/>
+<td><button onclick="function2();">Left</button><td/>
+<tr>
+<td><button onclick="function4();">Down</button><td/>
+<td><button onclick="function3();">Right</button><td/>
+<tr/>
+</table>
+<footer>
+<marquee behavior="scroll" direction="right" scrollamount="12" id="mymarquee2">
+
+</marquee>
+
+<input type="button" value="Stop car" onClick="document.getElementById('myMarquee').stop();">
+<input type="button" value="Slower" onClick="document.getElementById('myMarquee').setAttribute('scrollamount', 1, 0);">
+<input type="button" value="Normal Speed" onClick="document.getElementById('myMarquee').setAttribute('scrollamount', 12, 0);">
+<input type="button" value="Faster" onClick="document.getElementById('myMarquee').setAttribute('scrollamount', 50, 0);">
+<input type="button" value="Start car" onClick="document.getElementById('myMarquee').start();">
+<footer/>
+<h6 style="background-color:Tomato;"> note : start car has to be pressed to change the cars speed <h6/>
+
+</body>

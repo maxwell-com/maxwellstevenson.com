@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>rexton</title>
+    <style>
+      a:link {
+  color: green;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:visited {
+  color: pink;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:hover {
+  color: red;
+  background-color: transparent;
+  text-decoration: underline;
+}
+a:active {
+  color: yellow;
+  background-color: transparent;
+  text-decoration: underline;
+}
+  body {
+  background-image: url('https://images.outlookindia.com/public/uploads/articles/2019/4/19/nissan_1_20190419_571_855.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  }
+  #div1 {
+  width: 350px;
+  height: 70px;
+  padding: 10px;
+  border: 1px solid #aaaaaa;
+}
+  </style>
+  </head>
+  <body>
+
+    <script>
+    function rexton(){
+    var x = document.getElementById("smartness");
+      alert("you are "+x.value);
+    }
+
+
+    </script>
+    <center><h1>rexton page</h1><font color="black"><label for="smartness">your smartness is:</label></font>
+    <select id="smartness" name="smartness">
+    <option value="dumb">dumb</option>
+    <option value="smart">smart</option>
+    <option value="genius">genius</option></select>
+    <button type="button" onclick="rexton()">Sumit</button>
+  <a href="http://maxwellstevenson.com/hello.html" target="_blank">click this </a> </center>
+
+  <script>
+
+  window.onload = init;
+  function init () {
+    memory    = 0;
+    operator  = " ";
+    accumulator = "";
+    calcDiv   = document.getElementById("calculatorDiv");
+    calcPlace = document.getElementById("calculatorLocation");
+    debugUl   = document.getElementById("debugList");
+    calcForm  = document.createElement("form");
+    calcTable = document.createElement("table");
+    calcRow0      = document.createElement("tr");
+    calcRow1      = document.createElement("tr");
+    calcRow2      = document.createElement("tr");
+    calcRow3      = document.createElement("tr");
+    calcRow4      = document.createElement("tr");
+    calcRow0.innerHTML = "<th colspan='5'><input type='text' size='20' disabled id='accumulator'></th>";
+    key_7       = new Key(" 7 ", calcRow1, digitClick, "digit");
+    key_8       = new Key(" 8 ", calcRow1, digitClick, "digit");
+    key_9       = new Key(" 9 ", calcRow1, digitClick, "digit");
+    key_divide  = new Key(" / ", calcRow1, operationClick, "operation");
+    key_clear   = new Key("C\nl\ne\na\nr", calcRow1, clearClick, "tall");
+    key_4       = new Key(" 4 ", calcRow2, digitClick, "digit");
+    key_5       = new Key(" 5 ", calcRow2, digitClick, "digit");
+    key_6       = new Key(" 6 ", calcRow2, digitClick, "digit");
+    key_times   = new Key(" * ", calcRow2, operationClick, "operation");
+    key_1       = new Key(" 1 ", calcRow3, digitClick, "digit");
+    key_2       = new Key(" 2 ", calcRow3, digitClick, "digit");
+    key_3       = new Key(" 3 ", calcRow3, digitClick, "digit");
+    key_minus   = new Key(" - ", calcRow3, operationClick, "operation");
+    key_enter   = new Key("E\nn\nt\ne\nr", calcRow3, enterClick, "tall");
+    key_0       = new Key(" 0 ", calcRow4, digitClick, "digit");
+    key_negate  = new Key("+/-", calcRow4, negateClick);
+    key_period  = new Key(" . ", calcRow4, periodClick);
+    key_plus    = new Key(" + ", calcRow4, operationClick, "operation");
+    key_clear.td.setAttribute("rowspan", "2");
+    key_enter.td.setAttribute("rowSpan", "2");
+    calcTable.appendChild(calcRow0);
+    calcTable.appendChild(calcRow1);
+    calcTable.appendChild(calcRow2);
+    calcTable.appendChild(calcRow3);
+    calcTable.appendChild(calcRow4);
+    calcForm.appendChild(calcTable);
+    calcDiv.replaceChild(calcForm, calcPlace);
+    calcAccumulator = document.getElementById("accumulator");
+  }
+  function Key (name, parent, action, kind) {
+     this.text         = name;
+     this.td           = document.createElement("td");
+     this.button       = document.createElement("input");
+     this.button.type  = "button";
+     this.button.name  = name;
+     this.button.value = name;
+     setAction(this, action);
+     addClass(this, kind);
+     addClass(this, "key");
+     this.td.appendChild(this.button);
+     parent.appendChild(this.td);
+  }
+  function addClass(key, newClass) {
+     var oldClasses = key.button.getAttribute("class");
+     if (oldClasses) {
+        newClasses = oldClasses + " " + newClass;
+     } else {
+        newClasses = newClass;
+     }
+     key.button.setAttribute("class", newClasses);
+  }
+  function setAction(key, action) {
+     key.button.onclick = action;
+  }
+  function clearClick (event) {
+     memory      = 0;
+     operation   = " ";
+     accumulator = "";
+     display(accumulator);
+  }
+  function digitClick (event) {
+     digit = event.target.name.substr(1,1);
+     if (accumulator)
+         accumulator = accumulator + digit;
+     else
+         accumulator = digit;
+     display(accumulator);
+  }
+  function periodClick (event) {
+     if (accumulator && accumulator.indexOf(".") < 0) {
+         accumulator = accumulator + ".";
+     } else if (!accumulator) {
+         accumulator = "0.";
+     } else {
+         alert("a second '.' is not allowed after "+accumulator);
+         return;
+     }
+     display(accumulator);
+  }
+  function negateClick (event) {
+     if ('-' === accumulator.substr(0,1))
+         accumulator = accumulator.substring(1);
+     else
+         accumulator = "-"+accumulator;
+     display(accumulator);
+  }
+  function enterClick (event) {
+     result = perform(memory, operator, valueOf(accumulator));
+     if (result) {
+         memory      = 0;
+         operator    = " ";
+         accumulator = ""+result;
+         display(accumulator);
+     } else {
+         alert("unable to perform "+memory+operation+accumulator);
+         memory      = 0;
+         operator    = " ";
+     }
+  }
+  function operationClick (event) {
+     var op = event.target.name.substr(1,1);
+     result = perform(memory, operator, valueOf(accumulator));
+     if (result) {
+         memory      = result;
+         operator    = op;
+         accumulator = ""
+     } else {
+         memory      = valueOf(accumulator);
+         operator    = op;
+         accumulator = "";
+     }
+     display(accumulator);
+  }
+  function perform(mem, op, acc) {
+     if ("+" === op) return mem + acc;
+     if ("-" === op) return mem - acc;
+     if ("*" === op) return mem * acc;
+     if ("/" === op) return mem / acc;
+     return undefined;
+  }
+  function display (number) {
+     var output = ""+valueOf(number);
+     calcAccumulator.value = output;
+  }
+  function valueOf(string) {
+     if (!string) return 0;
+     if (string instanceof String)
+        string.value();
+     return string;
+  }
+  function debug (msg) {
+    li = document.createElement("li");
+    li.innerHTML = msg;
+    debugUl.insertBefore(li, debugUl.firstChild);
+  }
+
+  </script>
+  <div id="calculatorDiv">
+  <p id="calculatorLocation">your calculator goes here</p>
+  </div>
+
+
+  <form oninput="x.value=parseInt(a.value)+parseInt(b.value)">0
+  <input type="range" id="a" value="50">100
+  +<input type="number" id="b" value="50">
+  =<output name="x" for="a b"></output>
+  </form>
+  
+
+
+  </body>
+
+
+
+
+
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+ body {
+  background-image: url('https://images.nintendolife.com/10823fc73257b/splatoon-2.original.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  </head>
+  <body>
+    <div data-ng-app="" data-ng-init="quantity=1;price=5">
+
+  <font color="white"><h2>Cost Calculator</h2></font>
+
+<font color="white">Quantity:</font> <input type="number" ng-model="quantity">
+<font color="white">Price:</font> <input type="number" ng-model="price">
+
+<font color="white"><p><b>Total in dollar:</b> {{quantity * price}}</p></font>
+
+
+</div>
+  </body>
+</html>

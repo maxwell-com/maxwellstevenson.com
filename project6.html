@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>  </title>
+
+    <style>
+  body {
+  background-image: url('https://img.favpng.com/18/6/4/cartoon-explosion-png-favpng-DsCTxcHJrt4duXNWy8F5PH2eu.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  }
+  #div1 {
+  width: 350px;
+  height: 70px;
+  padding: 10px;
+  border: 1px solid #aaaaaa;
+}
+  </style>
+  <script>
+  function allowDrop(ev) {
+    ev.preventDefault();
+  }
+
+  function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+  }
+
+  function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+  }
+  </script>
+
+  </head>
+
+
+
+  <body>
+<center> <h1> Your Dumbnuts</h1> </center>
+<button type="button" onclick="alert('hello dumbnuts!')">click here to be dumbnuts</button>
+<a href="http://maxwellstevenson.com/theredbutton.html"><img src="https://cdn10.bigcommerce.com/s-5i2skulqce/products/2786/images/28190/2201__39855.1485713722.1280.1280.jpg?c=2" width="100" height="100"></a><p>
+
+
+  <p>IF YOU PUT THE NUT IN THE BOX UR A DUMBNUT.</p>
+
+  <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+  <br>
+  <img id="drag1" src="https://vignette.wikia.nocookie.net/iceage/images/7/77/Scrat%27s_Acorn_3d.png/revision/latest?cb=20190430163155" draggable="true" ondragstart="drag(event)" width="336" height="69">
+
+  <h2>DUMBNUT  FILL OUT FORM.</h2>
+
+<p>DUMBNUT TIME</p>
+
+<form action="/action_page.php">
+  <fieldset>
+    <legend>which Dumbnut are you:</legend>
+    <label for="fname">why are you so Dumbnut:</label><br>
+    <input type="text" id="fname" name="fname" value="Dumbnuts"><br>
+    <label for="lname"> you blew up:</label><br>
+    <input type="text" id="lname" name="lname" value="Dumbnut"><br><br>
+    <button type="button" onclick="alert('Thank you!')">Sumbit</button>
+  </fieldset>
+</form>
+  </body>
+</html>

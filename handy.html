@@ -1,0 +1,818 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<!-- CHANGES: see 'CHANGE' and 'parsen' -->
+<SCRIPT LANGUAGE="JavaScript" SRC="parser.js">
+
+// Einf&uuml;gung parsen, damit ^ und ! erkannt werden (in diese Version 17.3.2000)
+</SCRIPT>
+<HEAD>
+	<META HTTP-EQUIV="Content-Type" CONTENT="text/html">
+	<META NAME="GENERATOR" Content="Microsoft FrontPage 4.0">
+	<META NAME="Author" Content="Ken Kikuchi">
+	<META NAME="description" content="JavaScript Interpreter and calculater pad on Web. You can test your JavaScript code in a window">
+	<META NAME="keywords" content="JavaScript, JavaCalc, Interpreter, Calculater">
+	<META HTTP-EQUIV="Content-Type" CONTENT="text/html;CHARSET=iso-8859-1">
+	<TITLE>amazing</TITLE>
+</HEAD>
+<!-- CHANGE: in onLoad exprFocus(evalform) entfernt -->
+<BODY onLoad="document.evalform.expr.focus()" bgcolor="#FFFFFF">
+<FORM METHOD="POST" ENCTYPE="application/x-www-form-urlencoded" NAME="evalform">
+  <P>
+    <SCRIPT LANGUAGE="JavaScript"><!--
+
+var _path="http://developer.netscape.com/docs/manuals/communicator/jsref/"
+
+/* Properties, Methods */
+
+// var _! = "ops.htm#1044220";
+// var _# = "doc2.htm#1012889";
+// var _% = "ops.htm#1042408";
+// var _& = "ops.htm#1042498";
+// var _&& = "ops.htm#1044220"
+// var _*/ = "stmt2.htm#1014739"
+//var _-- = "ops.htm#1042426"
+//var _++ = "ops.htm#1042417"
+//var _/* = "stmt2.htm#1014739"
+//var _// = "stmt2.htm#1014739"
+//var _^ = "ops.htm#1042498"
+//var _| = "ops.htm#1042498"
+//var _|| = "ops.htm#1044220"
+//var _~ = "ops.htm#1042498"
+var _A = "doca3.htm#1113072"
+var _abort = "evnt2.htm#1017362"
+var _about = "wina1.htm#1013049"
+var _abs = "core5.htm#1015273"
+var _acos = "core5.htm#1015296"
+var _action = "form1.htm#1010551"
+var _addClient = "glob1.htm#1012214"
+var _agent = "sess1.htm#1010359"
+var _alert = "win1.htm#1011140"
+var _alinkColor = "doc1.htm#1010561"
+var _anchor = "corea2.htm#1104325"
+var _Anchor = "doca.htm#1015687"
+var _creating = "corea2.htm#1013348"
+var _animation = "doca1.htm#1014599"
+var _appCodeName = "brow1.htm#1010356"
+var _APPLET = "doca2.htm#1015226"
+var _Applet = "doca2.htm#1015224"
+var _appName = "brow1.htm#1010391"
+var _appVersion = "brow1.htm#1010426"
+var _AREA = "doca3.htm#1113072"
+var _Area = "doc2.htm#1081434"
+var _arguments = "core4.htm#1013969"
+var _increment = "ops.htm#1042412"
+var _modulus = "ops.htm#1042403"
+var _unary = "ops.htm#1042430"
+var _Array = "core1.htm#1080770"
+var _creating = "corea2.htm#1013766"
+var _dense = "core1.htm#1010338"
+var _increasing = "core1.htm#1194260"
+var _indexing = "core1.htm#1010341"
+var _initial = "core1.htm#1010330"
+var _joining = "core1.htm#1010545"
+var _length = "core1.htm#1010409"
+var _referring = "core1.htm#1010341"
+var _sorting = "core1.htm#1143824"
+var _asin = "core5.htm#1015342"
+var _assignment = "ops.htm#1042274"
+var _atan = "core5.htm#1174626"
+var _atan2 = "core5.htm#1015434"
+var _AUTH_TYPE = "glob19.htm#1039668"
+var _back = "win1.htm#1187579"
+var _background = "doca3.htm#1113415"
+var _bgColor = "doc1.htm#1094162"
+var _BIG = "corea2.htm#1013388"
+var _big = "corea2.htm#1013386"
+var _binary = "oth1.htm#1011896"
+var _overview = "ops.htm#1042437"
+var _shift = "ops.htm#1042512"
+var _BLINK = "corea2.htm#1013418"
+var _blink = "corea2.htm#1013416"
+var _blob = "glob3.htm#1012250"
+var _blobLink = "lwa4.htm#1014130"
+var _BOLD = "corea2.htm#1013451"
+var _bold = "corea2.htm#1013449"
+var _Boolean = "core2.htm#1012259"
+var _border = "doca1.htm#1014769"
+var _break = "stmt1.htm#1004780"
+var _code = "brow1.htm#1010358"
+var _name = "brow1.htm#1010393"
+var _Button = "but.htm#1016056"
+var _clicking = "but1.htm#1011599"
+var _submit = "but1.htm#1011119"
+var _bytes = "oth1.htm#1011896"
+var _byteToString = "oth1.htm#1011894"
+var _registering = "glob.htm#1025879"
+var _caching = "doca1.htm#1095029"
+var _call = "pkg1.htm#1013126"
+var _callC = "glob4.htm#1012275"
+var _caller = "core4.htm#1014031"
+var _ceil = "core5.htm#1015485"
+var _CGI = "pref.htm#1012158"
+var _HTTPS = "glob19.htm#1039668"
+var _HTTPS_KEYSIZE = "glob19.htm#1039668"
+var _HTTPS_SECRETKEYSIZE = "glob19.htm#1039668"
+var _PATH_TRANSLATED = "glob19.htm#1039668"
+var _QUERY_STRING = "glob19.htm#1039668"
+var _REMOTE_ADDR = "glob19.htm#1039668"
+var _REMOTE_HOST = "glob19.htm#1039668"
+var _REMOTE_USER = "glob19.htm#1039668"
+var _REQUEST_METHOD = "glob19.htm#1039668"
+var _SCRIPT_NAME = "glob19.htm#1039668"
+var _SERVER_NAME = "glob19.htm#1039668"
+var _SERVER_PORT = "glob19.htm#1039668"
+var _SERVER_PROTOCOL = "glob19.htm#1039668"
+var _SERVER_URL = "glob19.htm#1039668"
+var _charAt = "corea2.htm#1013481"
+var _Checkbox = "choi1.htm#1013039"
+var _clicking = "but1.htm#1011599"
+var _default = "choi.htm#1012203"
+var _defining = "choi1.htm#1013041"
+var _clearError = "oth1.htm#1011929"
+var _clearInterval = "win1.htm#1187652"
+var _client = "intro.htm#1010768"
+var _maintaining = "glob.htm#1025879"
+var _File = "oth1.htm#1011957"
+var _window = "win1.htm#1011379"
+var _closed = "win1.htm#1010680"
+var _comment = "stmt2.htm#1014739"
+var _comments = "stmt2.htm#1014739"
+var _comparison = "ops.htm#1042338"
+var _complete = "doca1.htm#1014810"
+var _confirm = "win1.htm#1011417"
+var _scope = "lw2.htm#1021900"
+var _constructor = "corea1.htm#1127176"
+var _with = "stmt17.htm#1004911"
+var _continue = "stmt3.htm#1005879"
+var _conventions = "stmt.htm#1004756"
+var _cookie = "doc1.htm#1010655"
+var _cos = "core5.htm#1015515"
+var _cosine = "core5.htm#1015517"
+var _creating = "glob.htm#1025879"
+var _current = "wina2.htm#1013971"
+var _cursor = "lw1.htm#1054464"
+var _insertRow = "lwa1.htm#1012844"
+var _next = "lwa1.htm#1012884"
+var _properties = "lwa1.htm#1012719"
+var _database = "lw1.htm#1031336"
+var _Date = "core3.htm#1012685"
+var _day = "core3.htm#1012978"
+var _defining = "core3.htm#1012687"
+var _milliseconds = "core3.htm#1013479"
+var _month = "core3.htm#1013050"
+var _disconnect = "lw1.htm#1031715"
+var _storedProcArgs = "lw1.htm#1031872"
+var _debug = "glob5.htm#1012306"
+var _decrement = "ops.htm#1042421"
+var _default = "stmt17.htm#1004911"
+var _defaultChecked = "choi.htm#1012201"
+var _defaultSelected = "choi3.htm#1106899"
+var _defaultStatus = "win1.htm#1047435"
+var _dense = "core1.htm#1010338"
+var _destroy = "sess2.htm#1010790"
+//var _destroy = "pkg3.htm#1013366"
+var _Prompt = "win1.htm#1011714"
+var _DNS = "glob19.htm#1039668"
+var _document = "doc1.htm#1048486"
+var _embeds = "doc1.htm#1010720"
+var _domain = "doc1.htm#1010697"
+var _E = "core5.htm#1014939"
+var _elements = "form1.htm#1010594"
+var _embeds = "doc1.htm#1010720"
+var _enabledPlugin = "brow2.htm#1041455"
+var _encoding = "form1.htm#1010649"
+var _ENCTYPE = "form1.htm#1010651"
+var _eof = "oth1.htm#1011984"
+var _error = "oth1.htm#1012017"
+var _escape = "glob7.htm#1012329"
+var _eval = "corea1.htm#1012754"
+//var _eval = "pkg1.htm#1013136"
+var _event = "evnt1.htm#1093773"
+var _in = "core4.htm#1013927"
+var _specifying = "win1.htm#1011396"
+var _event = "evnt1.htm#1093773"
+var _handling = "doc1.htm#1113734"
+var _events = "evnt.htm#1059507"
+var _exists = "oth1.htm#1012044"
+var _exp = "core5.htm#1015562"
+var _expiration = "sess2.htm#1010815"
+var _fgColor = "doc1.htm#1010791"
+var _File = "oth1.htm#1015167"
+var _file = "wina1.htm#1013049"
+var _filename = "brow3.htm#1010832"
+var _FileUpload = "txt3.htm#1014071"
+var _find = "win1.htm#1187767"
+var _fixed = "corea2.htm#1013517"
+var _floor = "core5.htm#1015598"
+var _flush = "oth1.htm#1012065"
+var _focus = "win1.htm#1011491"
+var _fontcolor = "corea2.htm#1013537"
+var _blinking = "corea2.htm#1013418"
+var _bold = "corea2.htm#1013451"
+var _fontsize = "corea2.htm#1013572"
+var _syntax = "stmt7.htm#1004805"
+var _termination = "stmt1.htm#1004781"
+var _for = "stmt7.htm#1004804"
+var _for = "stmt8.htm#1004815"
+//var _in = "stmt8.htm#1004815"
+var _FORM = "form1.htm#1010278"
+var _form = "form2.htm#1011408"
+var _defining = "form1.htm#1010278"
+var _element = "win1.htm#1011215"
+//var _element = "win1.htm#1010834"
+var _elements = "form1.htm#1010594"
+var _ENCTYPE = "form1.htm#1010651"
+var _Form = "form1.htm#1010276"
+var _and = "pref.htm#1012158"
+var _MIME = "form1.htm#1010651"
+var _submit = "but1.htm#1011119"
+var _submitting = "but1.htm#1011119"
+var _Forward = "win1.htm#1187808"
+var _forward = "win1.htm#1187806"
+var _Frame = "wina.htm#1079184"
+var _top = "doca3.htm#1113727"
+var _ftp = "wina1.htm#1013049"
+var _specifying = "core4.htm#1013927"
+var _as = "core4.htm#1013903"
+var _function = "stmt9.htm#1004825"
+var _arguments = "core4.htm#1013969"
+var _blob = "glob3.htm#1012250"
+var _callC = "glob4.htm#1012275"
+var _caller = "core4.htm#1014031"
+var _calling = "glob4.htm#1012277"
+var _debug = "glob5.htm#1012306"
+var _escape = "glob7.htm#1012329"
+var _flush = "glob9.htm#1012361"
+var _Function = "core4.htm#1013867"
+var _isNAN = "glob12.htm#1012439"
+var _number = "core1.htm#1010409"
+var _parseFloat = "sess2.htm#1010784"
+var _parseInt = "sess2.htm#1010784"
+var _redirect = "glob16.htm#1033268"
+var _registerCFunction = "glob17.htm#1012586"
+var _return = "stmt13.htm#1004872"
+var _unescape = "glob23.htm#1012622"
+var _as = "core4.htm#1013903"
+var _write = "glob25.htm#1012652"
+var _getDate = "core3.htm#1012951"
+var _getDay = "core3.htm#1038587"
+var _getHours = "core3.htm#1012997"
+var _getLength = "oth1.htm#1012096"
+var _getMember = "pkg1.htm#1013146"
+var _getMinutes = "core3.htm#1013022"
+var _getMonth = "core3.htm#1013048"
+var _getOptionValue = "glob10.htm#1012389"
+var _getPeer = "pkg3.htm#1013381"
+var _getPosition = "oth1.htm#1012118"
+var _getSeconds = "core3.htm#1013074"
+var _getSelection = "doc1.htm#1113709"
+var _getSlot = "pkg1.htm#1013156"
+var _getTime = "core3.htm#1013113"
+var _getTimezoneOffset = "core3.htm#1013138"
+var _getWindow = "pkg3.htm#1013564"
+var _getWindow = "pkg1.htm#1013512"
+var _getYear = "core3.htm#1013157"
+var _Go = "wina2.htm#1013824"
+var _go = "wina2.htm#1014216"
+var _gopher = "wina1.htm#1013049"
+var _handleEvent = "doc1.htm#1113734"
+var _handling = "doc1.htm#1113734"
+var _height = "doca1.htm#1014844"
+var _Hidden = "form2.htm#1011262"
+var _next = "wina2.htm#1014079"
+var _previous = "wina2.htm#1014114"
+var _home = "win1.htm#1187880"
+var _host = "sess4.htm#1011177"
+var _hostname = "glob19.htm#1039668"
+var _hostname = "doc2.htm#1013012"
+var _href = "doc2.htm#1013071"
+var _hspace = "doca1.htm#1014884"
+var _generating = "glob.htm#1025879"
+var _and = "pref.htm#1012158"
+var _APPLET = "doca2.htm#1015226"
+var _AREA = "doca3.htm#1113072"
+var _BIG = "corea2.htm#1013388"
+var _BLINK = "corea2.htm#1013418"
+var _BOLD = "corea2.htm#1013451"
+var _FORM = "form1.htm#1010278"
+var _IMG = "lwa4.htm#1014111"
+var _INPUT = "but1.htm#1011119"
+var _MAP = "doca3.htm#1113072"
+var _HTTP = "glob19.htm#1039668"
+var _HTTP = "glob19.htm#1039668"
+var _HTTP = "glob19.htm#1039668"
+var _http = "wina1.htm#1013049"
+var _HTTPS = "glob19.htm#1039668"
+var _HTTPS_KEYSIZE = "glob19.htm#1039668"
+var _HTTPS_SECRETKEYSIZE = "glob19.htm#1039668"
+var _if = "stmt10.htm#1004833"
+var _else = "stmt10.htm#1004833"
+var _Image = "doca1.htm#1078163"
+var _Area = "doc2.htm#1081434"
+var _border = "doca1.htm#1014771"
+var _caching = "doca1.htm#1095029"
+var _preloading = "doca1.htm#1095029"
+var _size = "doca1.htm#1014591"
+var _source = "doca3.htm#1113721"
+var _imageX = "sess1.htm#1010405"
+var _imageY = "sess1.htm#1010429"
+var _IMG = "lwa4.htm#1014111"
+var _increment = "ops.htm#1042412"
+var _indexOf = "corea2.htm#1013607"
+var _init = "pkg3.htm#1013972"
+var _INPUT = "but1.htm#1011119"
+var _inputName = "sess1.htm#1010451"
+var _ip = "sess1.htm#1010477"
+var _isActive = "pkg3.htm#1013987"
+var _isNaN = "glob12.htm#1012439"
+var _italics = "corea2.htm#1013657"
+var _javaEnabled = "brow1.htm#1010516"
+var _LiveWire = "intro.htm#1010790"
+var _Navigator = "intro.htm#1010767"
+var _javascript = "wina1.htm#1013049"
+var _join = "core1.htm#1010543"
+var _JSException = "pkg2.htm#1007527"
+var _JSException = "pkg2.htm#1014128"
+var _JSObject = "pkg1.htm#1007459"
+var _lastIndexOf = "corea2.htm#1013689"
+var _lastModified = "doc1.htm#1036371"
+var _Layer = "doca3.htm#1113061"
+var _layers = "doca3.htm#1113061"
+var _left = "ops.htm#1042518"
+var _link = "corea2.htm#1104172"
+var _Link = "doc2.htm#1081434"
+var _linkColor = "doc1.htm#1042376"
+var _and = "doca3.htm#1113072"
+var _for = "lwa4.htm#1014047"
+var _defining = "doca3.htm#1113072"
+var _and = "doca3.htm#1113072"
+var _Link = "doc2.htm#1081434"
+var _with = "ops.htm#1042625"
+var _lists = "choi2.htm#1013973"
+var _LN10 = "core5.htm#1015025"
+var _LN2 = "core5.htm#1172201"
+var _load = "evnt13.htm#1010680"
+var _location = "wina1.htm#1012987"
+var _location = "doc1.htm#1010955"
+var _log = "core5.htm#1015627"
+var _LOG10E = "core5.htm#1015108"
+var _LOG2E = "core5.htm#1172570"
+var _natural = "core5.htm#1015027"
+//var _short-circuit = "ops.htm#1042574"
+//var _for = "stmt7.htm#1004805"
+var _termination = "stmt1.htm#1004781"
+var _while = "stmt16.htm#1004897"
+var _lowercase = "corea2.htm#1013181"
+var _lowsrc = "doca1.htm#1100753"
+var _mailto = "wina1.htm#1013049"
+var _MAP = "doca3.htm#1113072"
+var _Math = "core5.htm#1014720"
+var _max = "core5.htm#1015661"
+var _MAX_VALUE = "corea.htm#1012501"
+var _MAYSCRIPT = "doca2.htm#1015302"
+var _Prompt = "win1.htm#1011714"
+var _method = "form1.htm#1010822"
+var _methods = "core5.htm#1015273"
+//var _plug-ins = "brow3.htm#1010690"
+var _MimeType = "brow2.htm#1031247"
+var _min = "core5.htm#1015691"
+var _MIN_VALUE = "corea.htm#1012532"
+var _modulo = "ops.htm#1042408"
+var _modulus = "ops.htm#1042403"
+var _mouseout = "evnt16.htm#1010731"
+var _mouseOver = "evnt17.htm#1010759"
+var _moveBy = "win1.htm#1187904"
+var _moveTo = "doca3.htm#1113962"
+var _name = "doca1.htm#1014961"
+var _NaN = "corea.htm#1012563"
+var _e = "core5.htm#1014941"
+var _e = "core5.htm#1015564"
+var _of = "core5.htm#1015027"
+var _code = "brow1.htm#1010358"
+var _and = "intro.htm#1010768"
+var _name = "brow1.htm#1010393"
+var _navigator = "brow1.htm#1010271"
+var _NEGATIVE_INFINITY = "corea.htm#1012607"
+//var _netscape.javascript.JSException = "pkg2.htm#1007527"
+//var _netscape.javascript.JSObject = "pkg1.htm#1007459"
+//var _netscape.javascript.Plugin = "pkg3.htm#1007555"
+var _new = "ops.htm#1043107"
+var _news = "wina1.htm#1013049"
+var _of = "lwa1.htm#1012884"
+var _next = "wina2.htm#1014079"
+var _Number = "corea.htm#1012418"
+var _greater = "core5.htm#1015663"
+var _identifying = "glob.htm#1025879"
+var _Number = "corea.htm#1012418"
+var _obtaining = "core5.htm#1015487"
+var _parsing = "glob14.htm#1032603"
+var _square = "core5.htm#1015847"
+var _establishing = "stmt17.htm#1004911"
+var _focus = "win1.htm#1011215"
+var _specifying = "win1.htm#1011396"
+var _onAbort = "evnt2.htm#1017362"
+var _onLoad = "evnt13.htm#1010680"
+var _onMouseOut = "evnt16.htm#1010731"
+var _onMouseOver = "evnt17.htm#1010759"
+var _onReset = "evnt20.htm#1020913"
+var _onSelect = "evnt22.htm#1010817"
+var _onSubmit = "evnt23.htm#1010835"
+var _onUnload = "evnt24.htm#1012516"
+var _window = "win1.htm#1152528"
+var _opener = "win1.htm#1010891"
+var _assignment = "ops.htm#1042274"
+var _bitwise = "ops.htm#1042437"
+var _comparison = "ops.htm#1042338"
+var _logical = "ops.htm#1044813"
+var _special = "ops.htm#1042588"
+var _string = "ops.htm#1042582"
+var _packages = "pkg.htm#1003191"
+var _parent = "win1.htm#1151573"
+var _parse = "core3.htm#1013188"
+var _parseFloat = "sess2.htm#1010784"
+var _parseInt = "sess2.htm#1010784"
+var _PATH_INFO = "glob19.htm#1039668"
+var _PATH_TRANSLATED = "glob19.htm#1039668"
+var _pathname = "doc2.htm#1013130"
+var _PI = "core5.htm#1015149"
+var _Plugin = "pkg3.htm#1007555"
+var _Plugin = "pkg3.htm#1014256"
+var _Plugin = "brow3.htm#1010653"
+var _determining = "brow3.htm#1010695"
+var _port = "doc2.htm#1013186"
+var _POSITIVE_INFINITY = "corea.htm#1012637"
+var _pow = "core5.htm#1015720"
+var _previous = "wina2.htm#1014114"
+var _printing = "doc1.htm#1011209"
+var _project = "sess3.htm#1010916"
+var _prompt = "win1.htm#1011712"
+var _server = "sess4.htm#1011283"
+var _prototype = "core1.htm#1010483"
+var _QUERY_STRING = "glob19.htm#1039668"
+var _default = "choi.htm#1012203"
+var _Radio = "choi.htm#1011977"
+var _Radio = "choi.htm#1011977"
+var _random = "core5.htm#1015755"
+var _read = "oth1.htm#1012207"
+var _readByte = "oth1.htm#1012249"
+var _readln = "oth1.htm#1012285"
+var _redirect = "glob16.htm#1033268"
+var _referrer = "doc1.htm#1041085"
+var _refresh = "brow1.htm#1043046"
+var _registerCFunction = "glob17.htm#1012586"
+var _reload = "wina1.htm#1013725"
+var _REMOTE_ADDR = "glob19.htm#1039668"
+var _REMOTE_HOST = "glob19.htm#1039668"
+var _REMOTE_USER = "glob19.htm#1039668"
+var _removeMember = "pkg1.htm#1014298"
+var _replace = "wina1.htm#1013767"
+var _request = "sess1.htm#1010271"
+var _REQUEST_METHOD = "glob19.htm#1039668"
+var _Reset = "but2.htm#1012912"
+var _reset = "evnt20.htm#1020913"
+var _reset = "form1.htm#1010937"
+var _Reset = "but2.htm#1012912"
+var _resizeBy = "win1.htm#1188058"
+var _resizeTo = "win1.htm#1188107"
+var _return = "stmt13.htm#1004871"
+var _reverse = "core1.htm#1029171"
+var _right = "ops.htm#1042522"
+var _round = "core5.htm#1015771"
+var _SCRIPT_NAME = "glob19.htm#1039668"
+var _scroll = "win1.htm#1011892"
+var _scrollBy = "win1.htm#1188205"
+var _scrollTo = "win1.htm#1188248"
+var _search = "doc2.htm#1013301"
+var _select = "evnt22.htm#1010817"
+var _Select = "choi2.htm#1013973"
+var _SELECT = "glob.htm#1025879"
+var _selectedIndex = "choi2.htm#1014626"
+var _changing = "choi3.htm#1113758"
+var _default = "choi3.htm#1106901"
+var _deleting = "choi2.htm#1113084"
+var _number = "core1.htm#1010409"
+var _option = "choi3.htm#1111005"
+var _Select = "choi2.htm#1013973"
+var _self = "win1.htm#1010983"
+var _server = "intro.htm#1010792"
+var _server = "sess4.htm#1011084"
+var _SERVER_NAME = "glob19.htm#1039668"
+var _SERVER_PORT = "glob19.htm#1039668"
+var _SERVER_PROTOCOL = "glob19.htm#1039668"
+var _SERVER_URL = "glob19.htm#1039668"
+var _session = "glob19.htm#1039668"
+var _setDate = "core3.htm#1013221"
+var _setHours = "core3.htm#1013249"
+var _setMember = "pkg1.htm#1014308"
+var _setMinutes = "core3.htm#1013276"
+var _setMonth = "core3.htm#1013303"
+var _setPosition = "oth1.htm#1012321"
+var _setSeconds = "core3.htm#1013330"
+var _setSlot = "pkg1.htm#1014318"
+var _setTime = "core3.htm#1013357"
+var _setTimeout = "win1.htm#1012029"
+var _setYear = "core3.htm#1013386"
+var _sin = "core5.htm#1015799"
+var _small = "corea2.htm#1013735"
+var _sort = "core1.htm#1189865"
+var _void = "ops.htm#1042625"
+var _split = "corea2.htm#1013764"
+var _SQL = "pref.htm#1013291"
+var _sqrt = "core5.htm#1015845"
+var _SQRT1_2 = "core5.htm#1015190"
+var _SQRT2 = "core5.htm#1015231"
+var _square = "core5.htm#1015847"
+var _src = "doca1.htm#1095698"
+var _ssjs_getCGIVariable = "glob19.htm#1039668"
+var _ssjs_getClientID = "glob20.htm#1038173"
+var _status = "win1.htm#1011025"
+var _stop = "win1.htm#1188369"
+var _outParameters = "lwa2.htm#1013011"
+var _returnValue = "lwa2.htm#1013053"
+var _strike = "corea2.htm#1013806"
+var _String = "corea2.htm#1012977"
+var _string = "ops.htm#1042582"
+var _bold = "corea2.htm#1013451"
+var _character = "corea2.htm#1013181"
+//var _converting = "oth1.htm#1011896"
+var _converting = "core3.htm#1013451"
+//var _converting = "glob14.htm#1032603"
+var _creating = "core1.htm#1010545"
+var _defining = "corea2.htm#1012979"
+var _fontsize = "corea2.htm#1013388"
+var _length = "core1.htm#1010409"
+var _lowercase = "corea2.htm#1013181"
+var _parsing = "glob.htm#1025879"
+var _splitting = "corea2.htm#1013766"
+var _String = "corea2.htm#1012977"
+var _stringToByte = "oth1.htm#1012376"
+var _sub = "corea2.htm#1013864"
+var _defining = "but1.htm#1011119"
+var _Submit = "but1.htm#1011117"
+//var _submit = "evnt23.htm#1010835"
+//var _submit = "form1.htm#1010966"
+//var _Submit = "but1.htm#1011117"
+var _substring = "corea2.htm#1013890"
+var _suffixes = "brow2.htm#1049027"
+var _sup = "corea2.htm#1013924"
+var _syntax = "stmt.htm#1004756"
+var _tan = "core5.htm#1015872"
+var _target = "doc2.htm#1013360"
+var _TCP = "glob19.htm#1039668"
+var _this = "ops.htm#1043482"
+//var _this.form = "form2.htm#1011408"
+var _defining = "core3.htm#1012687"
+var _minutes = "core3.htm#1013024"
+var _title = "doc1.htm#1010936"
+var _toGMTString = "core3.htm#1013422"
+var _toLocaleString = "core3.htm#1013449"
+var _toLowerCase = "corea2.htm#1013950"
+var _top = "doca3.htm#1113725"
+//var _user-defined = "corea1.htm#1012846"
+var _toString = "pkg1.htm#1014328"
+var _toUpperCase = "corea2.htm#1013974"
+var _Trace = "glob5.htm#1012308"
+var _overview = "lw1.htm#1031489"
+var _rolling = "lw1.htm#1031671"
+var _scope = "lw1.htm#1031495"
+var _typeof = "ops.htm#1042603"
+var _unary = "ops.htm#1042430"
+var _unescape = "glob23.htm#1012622"
+var _unique = "glob.htm#1025879"
+var _unload = "evnt24.htm#1012516"
+var _anchor = "doc2.htm#1012889"
+var _conventions = "pref.htm#1024199"
+var _current = "wina1.htm#1012989"
+var _escaping = "glob.htm#1025879"
+var _examples = "wina1.htm#1013049"
+var _history = "wina2.htm#1013824"
+var _next = "win1.htm#1187808"
+var _syntax = "wina1.htm#1013049"
+var _area = "doca3.htm#1113072"
+var _checkboxes = "choi1.htm#1013041"
+var _Confirm = "win1.htm#1011419"
+var _image = "doca3.htm#1113072"
+var _link = "doca3.htm#1113072"
+var _Prompt = "win1.htm#1011714"
+var _submit = "but1.htm#1011119"
+var _userAgent = "brow1.htm#1040488"
+var _UTC = "core3.htm#1013477"
+var _valueOf = "corea1.htm#1012908"
+var _var = "stmt15.htm#1004887"
+var _initializing = "stmt15.htm#1004888"
+var _syntax = "stmt15.htm#1004888"
+//var _view-source = "wina1.htm#1013049"
+var _vlinkColor = "doc1.htm#1010978"
+var _void = "doc2.htm#1012728"
+//var _void = "ops.htm#1042625"
+var _vspace = "doca1.htm#1015113"
+var _syntax = "stmt16.htm#1004897"
+var _termination = "stmt1.htm#1004781"
+var _while = "stmt16.htm#1004896"
+var _width = "doca1.htm#1015155"
+var _window = "win1.htm#1010280"
+var _closing = "win1.htm#1011381"
+var _name = "win1.htm#1010834"
+var _top = "doca3.htm#1113727"
+var _window = "win1.htm#1010280"
+var _with = "stmt17.htm#1004910"
+var _writeByte = "oth1.htm#1012451"
+var _writeln = "doc1.htm#1011246"
+
+var _historyExpr = new Array();
+var _historyResult = new Array();
+var _counter = 0;
+var _pointer ;
+
+/* functions */
+
+function compute(obj) {
+	var key=obj.expr.value.substring(0,20);
+	var p=key.search(/[^ ]/); /* avoid leading spaces */
+	if (key.charAt(p)=="?") {
+		obj.result.value=key.substr(p+1);
+		newWindow=window.open(_path+eval("_"+obj.result.value));
+		}
+	else {
+      	with(Math) {
+//               obj.result.value = eval(obj.expr.value)  /* core evaluation function */
+// Einf&uuml;gung parsen, damit ^ und ! erkannt werden (in dieser Version 17.3.2000)
+               obj.result.value = eval(parsen(obj.expr.value))  /* core evaluation function */
+
+               _pointer = ++_counter;
+         		obj.pointer.value = _pointer;
+               _historyExpr[_pointer] = obj.expr.value;
+               _historyResult[_pointer] = obj.result.value;
+       }
+    }
+}
+
+function undo_history(obj) {
+      if ((_pointer <= _counter) && (_pointer > 1)) {
+          obj.pointer.value = --_pointer;
+          obj.expr.value = _historyExpr[_pointer];
+          obj.result.value = _historyResult[_pointer];
+         }
+}
+
+function redo_history(obj) {
+      if (_pointer<_counter) {
+          obj.pointer.value= ++_pointer;
+          obj.expr.value = _historyExpr[_pointer];
+          obj.result.value = _historyResult[_pointer];
+          }
+}
+
+function exprFocus(obj) {
+	obj.expr.focus();
+}
+
+function cleanUp(obj) {
+        obj.result.value = ''; /* null */
+        obj.expr.value = ' ';  /* a space */
+        /* Netscape does not accept null into TEXTAREA therefore placing a space as a workaround */
+        /* Internet Explorer accepts null as expected */
+        exprFocus(obj);
+}
+
+/* Additional functions */
+
+function round2(n,p) {   /* round number n to decimal point p */
+        with(Math) {
+        var a = abs(p);
+        var m = 0;
+        if ( p<0 ) {
+                m = pow(10,a);
+                return round(n*m)/m }
+        else {
+                m = pow(10,p);
+                return round(n/m)*m }
+        }
+}
+
+function loggamma(x)  { /* log gamma */
+    with(Math) {
+        var v=1;
+        var w=0;
+        var z=0;
+        while ( x<8 ) { v*=x; x++ }
+        w=1/(x*x);
+        return ((((((((-3617/122400)*w + 7/1092)*w
+         -691/360360)*w + 5/5940)*w
+         -1/1680)*w + 1/1260)*w
+         -1/360)*w + 1/12)/x + 0.5 * log(2*PI)-log(v)-x+(x-0.5)*log(x) ;
+} }
+
+
+function gamma(x) {  /* gamma */
+    with(Math) {
+        if ( x <= 0 ) {
+            if (abs(x)-floor(abs(x))==0 )
+                return "ComplexInfinity" ;
+            else return PI/( sin(PI*x) * exp( loggamma(1-x) ) );
+            }
+        else
+            return exp(loggamma(x)) ;
+} }
+
+function factorial(n) {  /* factorial */
+  with(Math) {
+  if (n<0)  /* if negative */
+  	return gamma(n+1);
+  else if ((n == 0) || (n == 1))
+    return 1;
+  else if (abs(n)-floor(abs(n))==0 ) /* if positive integer */
+    return n * factorial(n-1) ;
+  else         /* if non-integer */
+    return gamma(n+1);
+} }
+
+function findroot(expr, x)  /*  Newton Method */
+{
+	var i,j;
+	var h, fx, df, x_prev, fx_prev, s, expr0;
+	var tolerance, overflow;
+
+	with(Math) {
+	tolerance = 1e-15;
+	overflow = 500; /* loop overflow */
+
+	if (expr.search(/==/) > -1) {
+		s=expr.split("==");
+		expr0=s[0]+"-"+s[1];}
+	else {
+		expr0=expr;
+	};
+
+	eval('function f(x) {with(Math){return '+expr0+'}}'); /* import equation */
+//document.open()
+	fx = f(x);
+	j = 0;
+	while (abs(fx)> tolerance) {
+		df = f(x + fx) - fx;  h = fx * fx / df;
+		x_prev = x;  fx_prev = fx;  i = 0; j++;
+		do {
+			x = x_prev - h;  fx = f(x);  h /= 2;  i++; j++;
+			if (j>overflow) {return "Loop Overflow"}
+//document.write(i+'  '+x+'  '+fx+'<br>');
+		} while (abs(fx) > abs(fx_prev));
+		if ((i == 1) && (x == x_prev)) break;
+	}
+	return x;
+} }
+
+function error_handler(msg, url, line) /* still try and error */
+{
+    if (in_their_code)
+    {
+        OUT = 'Error: "' + msg + '"';
+        expr[++cur_expr] = prev = OUT;
+        return true;    // I've handled it
+    }
+    else
+        return false;   // my error -- let browser handle it
+}
+
+window.onerror = error_handler;
+// window.onload = exprFocus(evalform);
+
+//--></SCRIPT>
+<a href="http://maxwellstevenson.com/hello.html"><img src="https://lh3.googleusercontent.com/proxy/F3uLfV8n6qdr9CHxKNZulZgRnggtKkqFJ8oJMi2xKeV1LsZ21aGFamyHjqhzZUk0q1DswUnWReuHcbEGqygN23tGKVI-Olc" width="100" height="100"></a><p>
+    <A NAME="JavaCalc"></A></P>
+  <H1 ALIGN="CENTER"><font color="#000000">
+    <font color="#7CA6BD" size="5"> </font></font><font color="#7CA6BD" size="3">super <BR>
+    </font><FONT SIZE="4" COLOR="#7CA6BD"> <!-- original #9966FF --> </FONT><font color="#7CA6BD" size="3">
+     Your Handy Calculator</font></H1>
+  <CENTER>
+    <TABLE BORDER="1" BGCOLOR="lightblue">
+      <TR>
+        <TH COLSPAN="4"><FONT COLOR="#330066">&nbsp;<font size="2">
+          &nbsp;</font></FONT></TH>
+      </TR>
+      <TR>
+        <TH>
+          <p><FONT COLOR="#330066">Input</FONT></p>
+          <p>
+            <input type="button" value="Undo" onClick="undo_history(this.form)">
+          </p>
+          <p>
+            <input type="button" value="Redo" onclick="redo_history(this.form)">
+          </p>
+          <p><input type="text" name="pointer" size="4"></p>
+        </TH>
+        <TD COLSPAN="3" BGCOLOR="pink">
+          <TEXTAREA NAME="expr" ROWS="10" COLS="45" TYPE="text"></TEXTAREA>
+        </TD>
+      </TR>
+      <TR>
+        <TH><FONT COLOR="#330066">Result</FONT></TH>
+        <TH>
+          <INPUT TYPE="TEXT" NAME="result" SIZE="32">
+        </TH>
+        <TH><b>
+          <INPUT TYPE="button" VALUE="Execute" onClick="compute(this.form)" style="color: #0000FF; font-weight: bold">
+          </b></TH>
+        <TH><b>
+          <input type="button" value=" C " onClick="cleanUp(this.form)" style="color: #FF0000; font-weight: bold">
+          </b></TH>
